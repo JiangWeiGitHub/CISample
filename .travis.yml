@@ -10,7 +10,6 @@ node_js:
 
 before_install:
   - brew update
-  - brew outdated hdiutil || brew upgrade hdiutil
 
 install:
     - npm install electron-prebuilt --save-dev
