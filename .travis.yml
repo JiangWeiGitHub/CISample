@@ -1,11 +1,14 @@
 language: node_js
+node_js:
+  - "6"
 
-os: osx
+os:
+  - osx
+  
 osx_image: xcode8.2
-node_js: "6"
 
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update          ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
   - echo $TRAVIS_OS_NAME
 
 install:
