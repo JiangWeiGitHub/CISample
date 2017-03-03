@@ -1,8 +1,6 @@
 language: node_js
 node_js: "6"
-sudo: required
 os:
-- linux
 - osx
 osx_image: xcode8.2
 
