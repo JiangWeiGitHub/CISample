@@ -14,7 +14,7 @@ files:
 dmg:
  contents:
   - type: link
-   path: "/Applications"
+  - path: "/Applications"
    x: 410
    y: 150
   - type: file
