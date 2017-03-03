@@ -5,8 +5,8 @@ productName: testApp
 asar: true
 
 directories:
-    buildResources: /
-    output: dist/
+    buildResources: "/"
+    output: "dist/"
 
 files:
     - "**/*"
@@ -14,7 +14,7 @@ files:
 dmg:
     contents:
         - type: link
-            path: /Applications
+            path: "/Applications"
             x: 410
             y: 150
         - type: file
@@ -23,7 +23,7 @@ dmg:
 
 mac:
     target: dmg
-    category: public.app-category.utilities
+    category: "public.app-category.utilities"
 
 win:
     target: nsis
