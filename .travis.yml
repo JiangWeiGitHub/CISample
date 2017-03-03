@@ -1,4 +1,4 @@
-os:
+TRAVIS_OS_NAME:
   - osx
 
 osx_image: xcode8.2
