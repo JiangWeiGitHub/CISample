@@ -1,4 +1,5 @@
 language: node_js
+osx_image: xcode8.2
 node_js:
     - "node"
     - "6"
@@ -16,4 +17,4 @@ install:
 script:
     - pwd
     - ls -la
-    - ./node_modules/.bin/build --config ./electron-builder.yml --win
+    - ./node_modules/.bin/build --config ./electron-builder.yml --mac
