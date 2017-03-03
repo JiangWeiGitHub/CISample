@@ -14,4 +14,6 @@ install:
     - webpack
     - npm run build
 script:
+    - pwd
+    - ls -la
     - ./node_modules/.bin/build --config ./electron-builder.yml --mac
