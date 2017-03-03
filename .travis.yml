@@ -8,8 +8,8 @@ node_js:
     - "node"
     - "6"
 
-before_install:
-  - brew update
+# before_install:
+#   - brew update
 
 install:
     - npm install electron-prebuilt --save-dev
