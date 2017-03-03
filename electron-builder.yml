@@ -22,13 +22,13 @@ dmg:
       y: 150
 
 mac:
-  - target: dmg
-  - category: "public.app-category.utilities"
+  target: dmg
+  category: "public.app-category.utilities"
 
 win:
-  - target: nsis
+  target: nsis
 
 linux:
-  - target:
+  target:
     - deb
     - AppImage
