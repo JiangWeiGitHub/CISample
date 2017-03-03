@@ -5,30 +5,30 @@ productName: testApp
 asar: true
 
 directories:
-    buildResources: "/"
-    output: "dist/"
+ buildResources: "/"
+ output: "dist/"
 
 files:
-    - "**/*"
+ - "**/*"
 
 dmg:
-    contents:
-        - type: link
-            path: "/Applications"
-            x: 410
-            y: 150
-        - type: file
-            x: 130
-            y: 150
+ contents:
+  - type: link
+   path: "/Applications"
+   x: 410
+   y: 150
+  - type: file
+   x: 130
+   y: 150
 
 mac:
-    target: dmg
-    category: "public.app-category.utilities"
+ target: dmg
+ category: "public.app-category.utilities"
 
 win:
-    target: nsis
+ target: nsis
 
 linux:
-    target:
-        - deb
-        - AppImage
+ target:
+  - deb
+  - AppImage
