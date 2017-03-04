@@ -5,13 +5,6 @@ osx_image: xcode8.2
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
-  - openssl aes-256-cbc -K $encrypted_25581fd8a0d2_key -iv $encrypted_25581fd8a0d2_iv
-    -in id_rsa.enc -out id_rsa -d
-  - git config --global user.name 'JiangWeiGitHub'
-  - git config --global user.email 'wei.jiang@winsuntech.cn'
-  - eval "$(ssh-agent -s)"
-  - chmod 600 id_rsa
-  - ssh-add id_rsa
 
 install:
     - npm install electron-prebuilt --save-dev
@@ -24,6 +17,13 @@ script:
     - ./node_modules/.bin/build --config ./electron-builder.yml --mac
     
 after_success:
+  - openssl aes-256-cbc -K $encrypted_25581fd8a0d2_key -iv $encrypted_25581fd8a0d2_iv
+    -in id_rsa.enc -out id_rsa -d
+  - git config --global user.name 'JiangWeiGitHub'
+  - git config --global user.email 'wei.jiang@winsuntech.cn'
+  - eval "$(ssh-agent -s)"
+  - chmod 600 id_rsa
+  - ssh-add id_rsa
   - echo -e 'Host gh\n    Host github.com\n    StrictHostKeyChecking no' >> ~/.ssh/config
   - git add *.dmg && git commit -m "add my files"
   - git remote add deploy git@github.com:JiangWeiGitHub/wisnucAssistant.git
