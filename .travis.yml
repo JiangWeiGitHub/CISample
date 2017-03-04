@@ -18,10 +18,8 @@ script:
     - ./node_modules/.bin/build --config ./electron-builder.yml --mac
     
 after_success:
-  - eval "$(ssh-agent -s)" #start the ssh agent
-  - ls -la
-  - ls -la .travis/
-  - chmod 600 .travis/deploy_key.pem # this key should have push access
-  - ssh-add .travis/deploy_key.pem
+  - eval "$(ssh-agent -s)"
+  - chmod 600 hehe.pem
+  - ssh-add hehe.pem
   - git remote add deploy git@github.com:JiangWeiGitHub/wisnucAssistant.git
   - git push deploy HEAD:master
