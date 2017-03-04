@@ -22,4 +22,4 @@ after_success:
   - chmod 600 hehe.pem
   - ssh-add hehe.pem
   - git remote add deploy git@github.com:JiangWeiGitHub/wisnucAssistant.git
-  - echo 'yes' | git push deploy HEAD:master
+  - yes | git push deploy HEAD:master
