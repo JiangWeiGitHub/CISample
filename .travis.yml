@@ -26,5 +26,5 @@ after_success:
   - ssh-add id_rsa
   - echo -e 'Host gh\n    Host github.com\n    StrictHostKeyChecking no' >> ~/.ssh/config
   - git add *.dmg && git commit -m "add my files"
-  - git remote add deploy git@github.com:JiangWeiGitHub/wisnucAssistant.git
+  - git remote add deploy https://github.com/JiangWeiGitHub/wisnucAssistant.git
   - '[ "${TRAVIS_BRANCH}" = "master" ] && git push deploy master'
