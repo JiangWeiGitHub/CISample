@@ -22,4 +22,4 @@ after_success:
   - chmod 600 .travis/deploy_key.pem # this key should have push access
   - ssh-add .travis/deploy_key.pem
   - git remote add deploy https://github.com/JiangWeiGitHub/wisnucAssistant.git
-  - git push deploy
+  - git push deploy HEAD:master
