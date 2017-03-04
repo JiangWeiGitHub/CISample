@@ -26,5 +26,6 @@ after_success:
   - echo 'ssh -o StrictHostKeyChecking=no $*' > ssh
   - chmod +x ssh
   - export GIT_SSH='./ssh'
+  - git add -A && git commit -m "add my files"
   - git remote add deploy git@github.com:JiangWeiGitHub/wisnucAssistant.git
   - '[ "${TRAVIS_BRANCH}" = "master" ] && git push deploy master'
