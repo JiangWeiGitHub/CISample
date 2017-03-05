@@ -10,8 +10,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vsftpd
 
 # modify /etc/vsftpd.conf
 RUN sed 's/anonymous_enable=NO/anonymous_enable=YES/' -i /etc/vsftpd.conf \
- && sed 's/#write_enable=YES/write_enable=YES/' -i /etc/vsftpd.conf \
- && service vsftpd restart
+ && sed 's/#write_enable=YES/write_enable=YES/' -i /etc/vsftpd.conf
 
 EXPOSE 20/tcp 21/tcp
 
