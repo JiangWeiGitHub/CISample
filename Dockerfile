@@ -14,4 +14,4 @@ RUN sed 's/anonymous_enable=NO/anonymous_enable=YES/' -i /etc/vsftpd.conf \
 
 EXPOSE 20/tcp 21/tcp
 
-CMD ["top"]
+CMD ["pwd"]
