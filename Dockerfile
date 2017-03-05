@@ -1,4 +1,4 @@
-FROM ubuntu:14.04:latest
+FROM ubuntu:14.04
 
 MAINTAINER JiangWeiGitHub <wei.jiang@winsuntech.cn>
 
