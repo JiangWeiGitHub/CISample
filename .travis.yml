@@ -25,4 +25,4 @@ env:
     - "FTP_PASSWORD=diablos"
     
 after_success:
-  "curl --ftp-create-dirs -T wisnucAssistant.dmg -u $FTP_USER:$FTP_PASSWORD ftp://diablos.3vdo.net/wisnuc"
+  "curl --ftp-create-dirs -T wisnucAssistant.dmg -u $FTP_USER:$FTP_PASSWORD ftp://005.3vftp.com/wisnuc"
