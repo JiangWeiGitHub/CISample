@@ -17,7 +17,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: ec671fce07cffeb37038f88f61533a534bda80fa
-  artifact: ./dist/mac/testApp-1.0.0.exe
+  artifact: ./dist/win/testApp-1.0.0.exe
   draft: false
   prerelease: false
   on:
