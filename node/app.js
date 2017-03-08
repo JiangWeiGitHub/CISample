@@ -4,6 +4,7 @@ import os from 'os'
 
 import Debug from 'debug'
 import { app } from 'electron'
+import appUpdater from "./appUpdater"
 
 import store from './serve/store/store'
 import configObserver from './lib/config'
@@ -66,6 +67,8 @@ app.on('ready', function() {
     console.log('download path is : ' + data)
     store.dispatch({type:'CONFIG_SET_DOWNLOAD_PATH',data})
   }
+  
+  new appUpdater()
   
   if (mocha) initTestWindow()
 
