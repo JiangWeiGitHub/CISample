@@ -14,6 +14,8 @@ before_build:
 #  - ls ./dist/"testApp Setup 1.0.0.exe" -la
 #  - mv ./dist/"testApp Setup 1.0.0.exe" ./dist/wisnucAssistent.exe
 
+build: off
+
 deploy:
   release: wisnucAssistant-v$(appveyor_build_version)
   description: 'Release test'
