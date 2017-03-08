@@ -10,7 +10,8 @@ install:
 
 before_build:
   - ./node_modules/.bin/build --config ./electron-builder.yml --win --x64
-  - mv 'testApp Setup 1.0.0.exe' 'wisnucAssistent.exe'
+  - ls ./dist -la
+  - mv ./dist/'testApp Setup 1.0.0.exe' ./dist/'wisnucAssistent.exe'
 
 deploy:
   release: wisnucAssistant-v$(appveyor_build_version)
@@ -18,7 +19,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: ec671fce07cffeb37038f88f61533a534bda80fa
-  artifact: ./wisnucAssistent.exe
+  artifact: ./dist/wisnucAssistent.exe
   draft: false
   prerelease: false
   on:
