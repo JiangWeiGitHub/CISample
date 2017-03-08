@@ -29,6 +29,7 @@ test: off
 
 deploy:
   - provider: GitHub
+    name: JiangWeiGitHub
     auth_token:
       secure: QdifofgEHCVGeC1LMxhxWnKjxDZKwOruUhW/6JzrlXmthWnaZ8rU0oLut+f+8BO1
     on:
