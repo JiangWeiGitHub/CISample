@@ -1,5 +1,6 @@
-environment:
-  nodejs_version: "6"
+#environment:
+#  nodejs_version: "6"
+
 #  appveyor_repo_tag: true
 #  release: wisnucAssistant-v$(appveyor_build_version)
 #  description: 'Release test'
