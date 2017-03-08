@@ -17,10 +17,10 @@ install:
 script:
     - ./node_modules/.bin/build --config ./electron-builder.yml --mac
 
-env:
-  global:
-    - "FTP_USER=diablos"
-    - "FTP_PASSWORD=diablos"
-    
-after_success:
-  "curl --ftp-create-dirs -T ./dist/mac/testApp-1.0.0.dmg -u $FTP_USER:$FTP_PASSWORD ftp://005.3vftp.com/wisnucAssistant.dmg"
+deploy:
+  provider: releases
+  api_key: "11ee9aea7b2f8e8b1052"
+  file: "./dist/mac/testApp-1.0.0.dmg"
+  skip_cleanup: true
+  on:
+    tags: true
