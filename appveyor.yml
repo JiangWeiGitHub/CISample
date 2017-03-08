@@ -29,7 +29,10 @@ test: off
 
 deploy:
   - provider: GitHub
-    username: JiangWeiGitHub
+    github_user:
+      "JiangWeiGitHub"
+    github_email:
+      "wei.jiang@winsuntech.cn"
     auth_token:
       secure: QdifofgEHCVGeC1LMxhxWnKjxDZKwOruUhW/6JzrlXmthWnaZ8rU0oLut+f+8BO1
     on:
