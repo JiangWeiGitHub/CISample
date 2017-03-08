@@ -19,7 +19,7 @@ script:
 
 deploy:
   provider: releases
-  api_key: "11ee9aea7b2f8e8b1052"
+  api_key: "ec671fce07cffeb37038f88f61533a534bda80fa"
   file: "./dist/mac/testApp-1.0.0.dmg"
   skip_cleanup: true
   on:
