@@ -1,6 +1,6 @@
 environment:
-  - nodejs_version: "6"
-  - appveyor_repo_tag: true
+  nodejs_version: "6"
+  appveyor_repo_tag: true
 
 install:
   - npm install electron-prebuilt --save-dev
