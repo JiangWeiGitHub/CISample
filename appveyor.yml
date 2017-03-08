@@ -9,9 +9,10 @@ install:
   - npm run build
 
 before_build:
-  - ./node_modules/.bin/build --config ./electron-builder.yml --win
-  - ls -la
-  - find ./ -name *.nsis
+  - ./node_modules/.bin/build --config ./electron-builder.yml --win --x64
+  - ls -la dist
+  - ls -la dist/win
+  - find ./ -name *.NSIS
 
 deploy:
   release: wisnucAssistant-v$(appveyor_build_version)
@@ -19,7 +20,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: ec671fce07cffeb37038f88f61533a534bda80fa
-  artifact: ./dist/win/testApp-1.0.0.exe
+  artifact: ./dist/win/testApp-1.0.0.NSIS
   draft: false
   prerelease: false
   on:
