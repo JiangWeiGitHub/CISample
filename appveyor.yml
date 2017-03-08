@@ -1,0 +1,25 @@
+environment:
+  nodejs_version: "6"
+
+install:
+  - npm install electron-prebuilt --save-dev
+  - npm install electron-builder webpack
+  - npm install
+  - webpack
+  - npm run build
+
+build:
+  - ./node_modules/.bin/build --config ./electron-builder.yml --win
+
+deploy:
+  release: wisnucAssistant-v$(appveyor_build_version)
+  description: 'Release test'
+  provider: GitHub
+  auth_token:
+    secure: ec671fce07cffeb37038f88f61533a534bda80fa
+  artifact: ./dist/mac/testApp-1.0.0.dmg
+  draft: false
+  prerelease: false
+  on:
+    branch: master                 # release from master branch only
+    appveyor_repo_tag: true        # deploy on tag push only
