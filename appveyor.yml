@@ -8,7 +8,7 @@ environment:
   draft: false
   prerelease: false
   auth_token:
-    secure: t74NxP2qvZZdRzl7wFI2IE/3/XFKyZV8KihQJDhOnrjgGSJarwjgn+B4rS82750r
+    secure: 938a98c742afc2ca0094a500bc0d15487b861655
 
 install:
   - npm install electron-prebuilt --save-dev
@@ -29,7 +29,7 @@ deploy:
   description: 'Release test'
   provider: GitHub
   auth_token:
-    secure: t74NxP2qvZZdRzl7wFI2IE/3/XFKyZV8KihQJDhOnrjgGSJarwjgn+B4rS82750r
+    secure: 938a98c742afc2ca0094a500bc0d15487b861655
   artifact: ./dist/"testApp Setup 1.0.0.exe"
   draft: false
   prerelease: false
