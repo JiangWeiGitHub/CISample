@@ -1,8 +1,6 @@
 environment:
   nodejs_version: "6"
   skip_tags: true
-  auth_token:
-    secure: QdifofgEHCVGeC1LMxhxWnKjxDZKwOruUhW/6JzrlXmthWnaZ8rU0oLut+f+8BO1
 
 #  appveyor_repo_tag: true
 #  release: wisnucAssistant-v$(appveyor_build_version)
@@ -31,8 +29,8 @@ test: off
 
 deploy:
   - provider: GitHub
-#    auth_token:
-#      secure: 36cb3bb287c1dfec7e8420dc51a603c53f8a309e
+    auth_token:
+      secure: QdifofgEHCVGeC1LMxhxWnKjxDZKwOruUhW/6JzrlXmthWnaZ8rU0oLut+f+8BO1
     on:
       branch: master
 #      appveyor_repo_tag: true
