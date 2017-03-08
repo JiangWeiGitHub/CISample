@@ -5,7 +5,7 @@ install:
   - npm install electron-prebuilt --save-dev
   - npm install electron-builder webpack
   - npm install
-  - webpack
+  - ./node_modules/.bin/webpack
   - npm run build
 
 before_build:
@@ -17,7 +17,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: ec671fce07cffeb37038f88f61533a534bda80fa
-  artifact: ./dist/mac/testApp-1.0.0.dmg
+  artifact: ./dist/mac/testApp-1.0.0.exe
   draft: false
   prerelease: false
   on:
