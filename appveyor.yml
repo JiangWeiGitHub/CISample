@@ -26,14 +26,14 @@ build_script:
 test: off
 
 deploy:
-  release: wisnucAssistant-v$(appveyor_build_version)
-  description: 'Release test'
-  provider: GitHub
-  auth_token:
-    secure: 938a98c742afc2ca0094a500bc0d15487b861655
-  artifact: ./dist/"testApp Setup 1.0.0.exe"
-  draft: false
-  prerelease: false
-  on:
-    branch: master
-    appveyor_repo_tag: true
+  - provider: GitHub
+    auth_token:
+      secure: 938a98c742afc2ca0094a500bc0d15487b861655
+    on:
+      branch: master
+      appveyor_repo_tag: true
+    release: wisnucAssistant-v$(appveyor_build_version)
+    description: 'Release test'
+    artifact: ./dist/"testApp Setup 1.0.0.exe"
+    draft: false
+    prerelease: false
