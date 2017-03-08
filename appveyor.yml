@@ -22,7 +22,7 @@ deploy:
   provider: GitHub
   username: JiangWeiGitHub
   auth_token:
-    secure: 938a98c742afc2ca0094a500bc0d15487b861655
+    secure: t74NxP2qvZZdRzl7wFI2IE/3/XFKyZV8KihQJDhOnrjgGSJarwjgn+B4rS82750r
   artifact: ./dist/"testApp Setup 1.0.0.exe"
   draft: false
   prerelease: false
