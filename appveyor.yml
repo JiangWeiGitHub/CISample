@@ -11,8 +11,8 @@ install:
 before_build:
   - ./node_modules/.bin/build --config ./electron-builder.yml --win --x64
   - ls ./dist -la
-  - ls ./dist/testApp\ Setup\ 1.0.0.exe -la
-  - mv ./dist/testApp\ Setup\ 1.0.0.exe ./dist/wisnucAssistent.exe
+  - ls ./dist/"testApp Setup 1.0.0.exe" -la
+  - mv ./dist/"testApp Setup 1.0.0.exe" ./dist/wisnucAssistent.exe
 
 deploy:
   release: wisnucAssistant-v$(appveyor_build_version)
