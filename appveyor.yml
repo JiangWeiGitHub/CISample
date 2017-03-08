@@ -34,11 +34,11 @@ deploy:
     prerelease: false
     
     auth_token:
-      secure: QdifofgEHCVGeC1LMxhxWnKjxDZKwOruUhW/6JzrlXmthWnaZ8rU0oLut+f+8BO1
+      secure: BR/awCN+aEXAMIN7nJN+Y2+3ChlQlhHEj7iTd2GHNgQ=
       
     on:
       branch: master
 #      appveyor_repo_tag: true
-#    release: wisnucAssistant-v$(appveyor_build_version)
-#    description: 'Release test'
+    release: wisnucAssistant-v$(appveyor_build_version)
+    description: 'Release test'
 
