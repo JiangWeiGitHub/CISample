@@ -1,6 +1,8 @@
 environment:
   nodejs_version: "6"
   appveyor_repo_tag: true
+  auth_token:
+    secure: t74NxP2qvZZdRzl7wFI2IE/3/XFKyZV8KihQJDhOnrjgGSJarwjgn+B4rS82750r
 
 install:
   - npm install electron-prebuilt --save-dev
@@ -21,8 +23,8 @@ deploy:
   description: 'Release test'
   provider: GitHub
   username: JiangWeiGitHub
-  auth_token:
-    secure: t74NxP2qvZZdRzl7wFI2IE/3/XFKyZV8KihQJDhOnrjgGSJarwjgn+B4rS82750r
+#  auth_token:
+#    secure: t74NxP2qvZZdRzl7wFI2IE/3/XFKyZV8KihQJDhOnrjgGSJarwjgn+B4rS82750r
   artifact: ./dist/"testApp Setup 1.0.0.exe"
   draft: false
   prerelease: false
