@@ -19,27 +19,26 @@ install:
   - ./node_modules/.bin/webpack
   - npm run build
 
+build: off
+
 build_script:
 #  - ./node_modules/.bin/build --config ./electron-builder.yml --win --x64 -p always
   - ./node_modules/.bin/build --config ./electron-builder.yml --win --x64
-
-#build: off
 
 test: off
 
 deploy:
   - provider: GitHub
-    github_user:
-      "JiangWeiGitHub"
-    github_email:
-      "wei.jiang@winsuntech.cn"
-    auth_token:
-      secure: QdifofgEHCVGeC1LMxhxWnKjxDZKwOruUhW/6JzrlXmthWnaZ8rU0oLut+f+8BO1
-    on:
-      branch: master
-#      appveyor_repo_tag: true
-    release: wisnucAssistant-v$(appveyor_build_version)
-    description: 'Release test'
     artifact: ./dist/"testApp Setup 1.0.0.exe"
     draft: false
     prerelease: false
+    
+    auth_token:
+      secure: QdifofgEHCVGeC1LMxhxWnKjxDZKwOruUhW/6JzrlXmthWnaZ8rU0oLut+f+8BO1
+      
+    on:
+      branch: master
+#      appveyor_repo_tag: true
+#    release: wisnucAssistant-v$(appveyor_build_version)
+#    description: 'Release test'
+
