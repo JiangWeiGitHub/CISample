@@ -1,6 +1,12 @@
 environment:
   nodejs_version: "6"
   appveyor_repo_tag: true
+  release: wisnucAssistant-v$(appveyor_build_version)
+  description: 'Release test'
+  provider: GitHub
+  artifact: ./dist/"testApp Setup 1.0.0.exe"
+  draft: false
+  prerelease: false
   auth_token:
     secure: t74NxP2qvZZdRzl7wFI2IE/3/XFKyZV8KihQJDhOnrjgGSJarwjgn+B4rS82750r
 
@@ -19,12 +25,11 @@ build: off
 test: off
 
 deploy:
-  release: wisnucAssistant-v$(appveyor_build_version)
-  description: 'Release test'
-  provider: GitHub
-  username: JiangWeiGitHub
+#  release: wisnucAssistant-v$(appveyor_build_version)
+#  description: 'Release test'
+#  provider: GitHub
 #  auth_token:
 #    secure: t74NxP2qvZZdRzl7wFI2IE/3/XFKyZV8KihQJDhOnrjgGSJarwjgn+B4rS82750r
-  artifact: ./dist/"testApp Setup 1.0.0.exe"
-  draft: false
-  prerelease: false
+#  artifact: ./dist/"testApp Setup 1.0.0.exe"
+#  draft: false
+#  prerelease: false
