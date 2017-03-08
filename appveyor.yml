@@ -10,6 +10,8 @@ install:
 
 before_build:
   - ./node_modules/.bin/build --config ./electron-builder.yml --win
+  - ls -la
+  - find ./ -name *.nsis
 
 deploy:
   release: wisnucAssistant-v$(appveyor_build_version)
