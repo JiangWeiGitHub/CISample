@@ -8,8 +8,7 @@ install:
   - webpack
   - npm run build
 
-build:
-  - on
+before_build:
   - ./node_modules/.bin/build --config ./electron-builder.yml --win
 
 deploy:
