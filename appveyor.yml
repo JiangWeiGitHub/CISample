@@ -34,7 +34,7 @@ deploy:
     prerelease: false
     
     auth_token:
-      secure: BR/awCN+aEXAMIN7nJN+Y2+3ChlQlhHEj7iTd2GHNgQ=
+      secure: 't74NxP2qvZZdRzl7wFI2IE/3/XFKyZV8KihQJDhOnrjgGSJarwjgn+B4rS82750r'
       
     on:
       branch: master
