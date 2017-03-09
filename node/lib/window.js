@@ -13,11 +13,11 @@ const initMainWindow = () => {
   // create window
 	_mainWindow = new BrowserWindow({
 		frame: true,
-		height: 768,
+		height: 480,
 		resizable: true,
-		width: 1366,
-		minWidth: 1366,
-		minHeight: 768,
+		width: 640,
+		minWidth: 640,
+		minHeight: 480,
 		title:'WISNUC',
 		icon: path.join(__dirname,'180-180.png'), // FIXME
 

@@ -13,10 +13,10 @@ environment:
 #    secure: 938a98c742afc2ca0094a500bc0d15487b861655
 
 install:
-  - npm install electron-prebuilt --save-dev
-  - npm install electron-builder electron-updater webpack
+#  - npm install electron-prebuilt --save-dev
+#  - npm install electron-builder electron-updater webpack
   - npm install
-  - ./node_modules/.bin/webpack
+  - ./node_modules/.bin/webpack -p
   - npm run build
 
 build: off
