@@ -34,4 +34,4 @@ deploy:
       
     on:
       branch: master
-      appveyor_repo_tag: false
+ #    appveyor_repo_tag: true
