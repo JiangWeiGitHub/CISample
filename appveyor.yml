@@ -14,7 +14,7 @@ environment:
 
 install:
   - npm install electron-prebuilt --save-dev
-  - npm install electron-builder webpack
+  - npm install electron-builder electron-updater webpack
   - npm install
   - ./node_modules/.bin/webpack
   - npm run build
