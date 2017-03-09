@@ -29,10 +29,11 @@ test: off
 
 artifacts:
   - path: ./dist/testApp*
+    name: testApp
 
 deploy:
   - provider: GitHub
-    artifact: ./dist/testApp*
+    artifact: testApp
     draft: true
     prerelease: false
     
