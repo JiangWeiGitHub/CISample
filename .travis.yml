@@ -19,8 +19,9 @@ script:
 
 deploy:
   provider: releases
-  api_key: "ba9bdd66240d2c5eb38b597ce906a53cc07d0cd1"
-  file: "./dist/mac/testApp-1.0.0.dmg"
+  api_key:
+    secure: ba9bdd66240d2c5eb38b597ce906a53cc07d0cd1
+  file: ./dist/mac/testApp-1.0.0.dmg
   skip_cleanup: true
   on:
     tags: true
