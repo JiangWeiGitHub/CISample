@@ -28,7 +28,9 @@ deploy:
       secure: '8I0YOKx83Ule4zlhrUXkPaJ0dxl5h29o64xQAGRSz31UpnLJByzzMU9wYHeUMGwC'
       
     on:
-#      branch: master
+#     branch: master
       appveyor_repo_tag: true
-    release: v$(appveyor_build_version)
-#    description: 'Release test'
+
+    tag: v0.0.4
+#   release: v$(appveyor_build_version)
+#   description: 'Release test'
