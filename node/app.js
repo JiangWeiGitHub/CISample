@@ -141,3 +141,14 @@ app.on('ready', function() {
 })
 
 app.on('window-all-closed', () => app.quit())
+
+
+autoUpdater.on('update-downloaded', (ev, info) => {
+  setTimeout(function() {
+    autoUpdater.quitAndInstall()
+  }, 5000)
+})
+
+app.on('ready', function()  {
+  autoUpdater.checkForUpdates()
+})

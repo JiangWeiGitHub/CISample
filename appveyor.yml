@@ -1,20 +1,8 @@
 environment:
   nodejs_version: "6"
-  skip_tags: true
-
-#  appveyor_repo_tag: true
-#  release: wisnucAssistant-v$(appveyor_build_version)
-#  description: 'Release test'
-#  provider: GitHub
-#  artifact: ./dist/"testApp Setup 1.0.0.exe"
-#  draft: false
-#  prerelease: false
-#  auth_token:
-#    secure: 938a98c742afc2ca0094a500bc0d15487b861655
+  skip_tags: false
 
 install:
-#  - npm install electron-prebuilt --save-dev
-#  - npm install electron-builder electron-updater webpack
   - npm install
   - ./node_modules/.bin/webpack -p
   - npm run build
@@ -22,7 +10,6 @@ install:
 build: off
 
 build_script:
-#  - ./node_modules/.bin/build --config ./electron-builder.yml --win --x64 -p always
   - ./node_modules/.bin/build --config ./electron-builder.yml --win --x64
 
 test: off
@@ -41,7 +28,7 @@ deploy:
       secure: '7miOW5i28F3QTVsgMmGBI7lhkxfS2kD3DKQPhTLgTIlmROJ6lGBke1/GYTPqwCUx'
       
     on:
-      branch: master
-#      appveyor_repo_tag: true
+#      branch: master
+      appveyor_repo_tag: true
     release: wisnucAssistant-v$(appveyor_build_version)
     description: 'Release test'
