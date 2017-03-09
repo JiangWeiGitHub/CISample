@@ -30,11 +30,11 @@ test: off
 deploy:
   - provider: GitHub
     artifact: ./dist/"testApp Setup 1.0.0.exe"
-    draft: false
+    draft: true
     prerelease: false
     
     auth_token:
-      secure: 't74NxP2qvZZdRzl7wFI2IE/3/XFKyZV8KihQJDhOnrjgGSJarwjgn+B4rS82750r'
+      secure: 'DhLexoyfZQBXUj5vkTdvqedXl1BYQZiRbimUxTRUh4vfI9Ek1n1K2IxN+JDpMU/E'
       
     on:
       branch: master
