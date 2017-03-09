@@ -4,7 +4,7 @@ environment:
 
 install:
   - npm install electron-prebuilt --save-dev
-  - npm install electron-builder electron-updater webpack
+  - npm install electron-builder webpack
   - npm install
   - ./node_modules/.bin/webpack
   - npm run build
@@ -22,9 +22,6 @@ artifacts:
 
 deploy:
   - provider: GitHub
-    release: wisnucAssistant-v$(appveyor_build_version)
-    description: 'Release test'
-    
     artifact: testApp
     draft: false
     prerelease: false
@@ -34,4 +31,6 @@ deploy:
       
     on:
       branch: master
- #    appveyor_repo_tag: true
+#     appveyor_repo_tag: true
+    release: wisnucAssistant-v$(appveyor_build_version)
+    description: 'Release test'
