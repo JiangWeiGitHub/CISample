@@ -8,10 +8,10 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
 
 install:
-    - npm install electron-prebuilt --save-dev
-    - npm install electron-builder electron-updater webpack
+#    - npm install electron-prebuilt --save-dev
+#    - npm install electron-builder electron-updater webpack
     - npm install
-    - webpack
+    - ./node_modules/.bin/webpack -p
     - npm run build
     
 script:
@@ -25,3 +25,4 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
+    repo: JiangWeiGitHub/wisnucAssistant

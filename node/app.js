@@ -4,7 +4,9 @@ import os from 'os'
 
 import Debug from 'debug'
 import { app } from 'electron'
-import appUpdater from "./appUpdater"
+// import appUpdater from "./appUpdater"
+import { autoUpdater } from "electron-updater"
+import log from "electron-log"
 
 import store from './serve/store/store'
 import configObserver from './lib/config'
@@ -33,6 +35,46 @@ global.entryFileDir = __dirname
 const debug = Debug('main')
 
 var mocha = false
+
+
+////////////////////////////////////////////////////////////////
+
+autoUpdater.logger = log
+autoUpdater.logger.transports.file.level = 'info'
+log.info('App starting...')
+
+
+let win;
+
+function sendStatus(text) {
+  log.info(text)
+}
+
+autoUpdater.on('checking-for-update', () => {
+  sendStatus('Checking for update...');
+})
+
+autoUpdater.on('update-available', (ev, info) => {
+  sendStatus('Update available.');
+})
+
+autoUpdater.on('update-not-available', (ev, info) => {
+  sendStatus('Update not available.');
+})
+
+autoUpdater.on('error', (ev, err) => {
+  sendStatus('Error in auto-updater.');
+})
+
+autoUpdater.on('download-progress', (ev, progressObj) => {
+  sendStatus('Download progress...');
+})
+
+autoUpdater.on('update-downloaded', (ev, info) => {
+  sendStatus('Update downloaded; will install in 5 seconds');
+})
+
+////////////////////////////////////////////////////////////
 
 // initialize mdns
 mdns().on('stationUpdate', device => {
@@ -68,7 +110,7 @@ app.on('ready', function() {
     store.dispatch({type:'CONFIG_SET_DOWNLOAD_PATH',data})
   }
   
-  new appUpdater()
+  
   
   if (mocha) initTestWindow()
 
