@@ -34,7 +34,7 @@ artifacts:
 deploy:
   - provider: GitHub
     artifact: testApp
-    draft: true
+    draft: false
     prerelease: false
     
     auth_token:
