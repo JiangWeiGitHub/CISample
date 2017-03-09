@@ -28,11 +28,11 @@ build_script:
 test: off
 
 artifacts:
-  - path: ./dist/'testApp Setup 1.0.0.exe'
+  - path: ./dist/testApp*
 
 deploy:
   - provider: GitHub
-    artifact: ./dist/"testApp Setup 1.0.0.exe"
+    artifact: ./dist/testApp*
     draft: true
     prerelease: false
     
