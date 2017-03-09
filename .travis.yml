@@ -9,7 +9,7 @@ before_install:
 
 install:
     - npm install electron-prebuilt --save-dev
-    - npm install electron-builder webpack
+    - npm install electron-builder electron-updater webpack
     - npm install
     - webpack
     - npm run build
@@ -19,7 +19,7 @@ script:
 
 deploy:
   provider: releases
-  api_key: "ec671fce07cffeb37038f88f61533a534bda80fa"
+  api_key: "ba9bdd66240d2c5eb38b597ce906a53cc07d0cd1"
   file: "./dist/mac/testApp-1.0.0.dmg"
   skip_cleanup: true
   on:
