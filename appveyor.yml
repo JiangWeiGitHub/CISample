@@ -25,7 +25,7 @@ deploy:
     prerelease: false
     
     auth_token:
-      secure: '7miOW5i28F3QTVsgMmGBI7lhkxfS2kD3DKQPhTLgTIlmROJ6lGBke1/GYTPqwCUx'
+      secure: '8I0YOKx83Ule4zlhrUXkPaJ0dxl5h29o64xQAGRSz31UpnLJByzzMU9wYHeUMGwC'
       
     on:
 #      branch: master
