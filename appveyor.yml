@@ -30,5 +30,5 @@ deploy:
     on:
 #      branch: master
       appveyor_repo_tag: true
-    release: wisnucAssistant-v$(appveyor_build_version)
-    description: 'Release test'
+#    release: wisnucAssistant-v$(appveyor_build_version)
+#    description: 'Release test'
