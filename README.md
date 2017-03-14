@@ -1,10 +1,10 @@
 # 持续集成操作步骤:
 
 ## 目的
-将github上的源码项目通过持续集成的方式自动编译生成可执行程序和安装包,并传回github release供用户使用
+通过持续集成的方式, 在github上的源码项目发生`push tag`动作时, 自动编译生成可执行程序和安装包, 并传回`github releases`供用户使用
 
 ## 介绍:
-操作步骤分为两个平台: windows和mac, 因为一次代码和tag提交会生成一份指定编号的release,而两个平台使用不同的ci服务,当有新tag时,会造成两个ci服务都往github release推送相同release编号的生成包,造成第二次推送失败
+操作步骤分为两个平台: windows和mac, 因为一次代码和tag提交会生成一份指定编号的release,而两个平台使用不同的ci服务,当有新tag时,会造成两个ci服务都往`github releases`推送相同release编号的生成包,造成第二次推送失败
 
 ## Sample
 + [**Windows**](https://github.com/JiangWeiGitHub/wisnucAssistant-win)
@@ -58,7 +58,7 @@ git commit ...
 git tag -a v0.0.1
 git push origin master --tag
 ```
-+ appveyor页面随即提示有新的build,等待操作完成后,访问`github release`页面即可发现最新生成包
++ appveyor页面随即提示有新的build,等待操作完成后,访问`github releases`页面即可发现最新生成包
 
 ### macos平台:
 + [*travis*](https://travis-ci.org/)注册帐号
@@ -163,4 +163,4 @@ git commit ...
 git tag -a v0.0.1
 git push origin master --tag
 ```
-+ travis页面随即提示有新的build,等待操作完成后,访问github release页面即可发现最新生成包
++ travis页面随即提示有新的build,等待操作完成后,访问`github releases`页面即可发现最新生成包
