@@ -154,7 +154,7 @@ deploy:
 4. Open context menu and Export.
 ```
   备注: 记住导出时使用的密码
-+ 将生成的`p12`加入github源码池中, 并记录好该文件的`https`地址, 如[*Address*](https://github.com/JiangWeiGitHub/wisnucAssistant-mac/raw/master/certificate.p12)
++ 将生成的`p12`加入github源码池中, 并记录好该文件的`https`地址, 如[*Sample File*](https://github.com/JiangWeiGitHub/wisnucAssistant-mac/raw/master/certificate.p12)
 + 在travis的项目页面上点击`More options`->`Settings`, 在`Environment Variables`下增加两个字段`CSC_LINK`, `CSC_KEY_PASSWORD`, `CSC_LINK`字段的值即为上一步的`p12`文件的https地址, `CSC_KEY_PASSWORD`即为导出`p12`文件时输入的密码
 + 在shell环境下执行git相关命令，创建新的tag标签
 ```
