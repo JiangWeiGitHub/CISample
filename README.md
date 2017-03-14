@@ -16,7 +16,7 @@
 + 将github项目加入appveyor
 + 从`https://github.com/settings/tokens`获取token
 + 使用appveyor官网工具([*Link*](https://ci.appveyor.com/tools/encrypt))加密上一步的token
-+ 在项目根目录下编写配置文件,将`auth_token`键名后加上上步的加密后字符串
++ 在项目根目录下编写配置文件`appveyor.yml`,将`auth_token`键名后添加上一步的加密后字符串
 
 ```
 environment:
@@ -65,11 +65,11 @@ git push origin master --tag
 ### macos平台:
 + [*travis*](https://travis-ci.org/)注册帐号
 + 将github项目加入travis
-+ 编写`.travis`配置文件
++ 在项目根目录编写`.travis.yml`配置文件
 
   备注: 此时的配置文件只是包含部分内容, 需要后续步骤补充修改
   
-  重要: 配置文件中的`osx_image`字段现阶段指定`xcode8`, 不要使用更高版本，否则travis在build时, `code signing`环节会报错
+  重要: 配置文件中的`osx_image`字段现阶段指定为`xcode8`, 不要使用更高版本，否则travis在build时, `code signing`环节会报错
 ```
 ### 配置文件内容 ###
 sudo: true
@@ -109,7 +109,7 @@ sudo gem install travis -v 1.8.8 --no-rdoc --no-ri
   
   备注: 该命令包含用户交互界面, 根据项目具体信息填写相关问题, 有一步需要将前面的token填入进去
 
-+ 上步骤完成后, `.travis`配置文件被工具自动修改, 增添了`deploy`字段, 在此基础上继续完善该文件
++ 上步骤完成后, `.travis.yml`配置文件被工具自动修改, 增添了`deploy`字段, 在此基础上继续完善该文件
 ```
 sudo: true
 language: node_js
