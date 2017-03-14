@@ -55,7 +55,7 @@ deploy:
 ```
 git add ...
 git commit ...
-git tag -a v0.0.1
+git tag -a v?.?.?
 git push origin master --tag
 ```
 + appveyor页面随即提示有新的build,等待操作完成后,访问`github releases`页面即可发现最新生成包
@@ -155,12 +155,12 @@ deploy:
 ```
   备注: 记住导出时使用的密码
 + 将生成的`p12`加入github源码池中, 并记录好该文件的`https`地址, 如[*Address*](https://github.com/JiangWeiGitHub/wisnucAssistant-mac/raw/master/certificate.p12)
-+ 在travis的项目页面上点击`More options`->`Settings`, 在`Environment Variables`下增加两个字段`CSC_LINK`, `CSC_KEY_PASSWORD`, `CSC_LINK`字段的值即为上一步的*.p12文件的https地址, `CSC_KEY_PASSWORD`即为导出`p12`文件输入的密码
++ 在travis的项目页面上点击`More options`->`Settings`, 在`Environment Variables`下增加两个字段`CSC_LINK`, `CSC_KEY_PASSWORD`, `CSC_LINK`字段的值即为上一步的`p12`文件的https地址, `CSC_KEY_PASSWORD`即为导出`p12`文件时输入的密码
 + 在shell环境下执行git相关命令，创建新的tag标签
 ```
 git add ...
 git commit ...
-git tag -a v0.0.1
+git tag -a v?.?.?
 git push origin master --tag
 ```
 + travis页面随即提示有新的build, 等待操作完成后, 访问`github releases`页面即可发现最新生成包
