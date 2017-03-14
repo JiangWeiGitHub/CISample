@@ -51,6 +51,8 @@ deploy:
     on:
       appveyor_repo_tag: true
 ```
+
+  注意：键`artifacts`->`name`的值和`deploy`->`atrifact`的值必须一致
 + 在shell环境下执行git相关命令，创建新的`tag`标签
 ```
 git add ...
