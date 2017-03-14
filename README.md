@@ -4,7 +4,7 @@
 通过持续集成的方式, 当`github`上的源码项目发生`push tag`动作时, 自动编译生成可执行程序和安装包, 并传回`github releases`供用户使用
 
 ## 介绍:
-操作步骤分为两个平台: windows和mac, 因为一次代码和tag提交会生成一份指定编号的release,而两个平台使用不同的ci服务,当有新tag时,会造成两个ci服务都往`github releases`推送相同release编号的生成包,造成第二次推送失败
+操作步骤分为两个平台: windows(使用`appveyor`)和mac(使用`travis`), 因为一次代码和tag提交会生成一份指定编号的release,而两个平台使用不同的ci服务,当有新tag时,会造成两个ci服务都往`github releases`推送相同release编号的生成包,造成第二次推送失败
 
 ## Sample
 + [**Windows**](https://github.com/JiangWeiGitHub/wisnucAssistant-win)
