@@ -146,12 +146,18 @@ deploy:
 + 为了`code signing`, 先在MAC主机上导出证书，具体操作参看下列示例
 ```
 1. Open Keychain.
+
 2. Select login keychain, and My Certificates category.
+
 3. Select all required certificates (hint: use cmd-click to select several):
-  3.1 Developer ID Application: to sign app for macOS.
-  3.2 3rd Party Mac Developer Application: and 3rd Party Mac Developer Installer: to sign app for MAS (Mac App Store).
-  3.3 Developer ID Application: and Developer ID Installer to sign app and installer for distribution outside of the Mac App Store.
-  Please note – you can select as many certificates, as need. No restrictions on electron-builder side. All selected certificates will be imported into temporary keychain on CI server.
+
+    3.1 Developer ID Application: to sign app for macOS.
+ 
+    3.2 3rd Party Mac Developer Application: and 3rd Party Mac Developer Installer: to sign app for MAS (Mac App Store).
+ 
+    3.3 Developer ID Application: and Developer ID Installer to sign app and installer for distribution outside of the Mac App Store.
+ 
+    Please note – you can select as many certificates, as need. No restrictions on electron-builder side. All selected certificates will be imported into temporary keychain on CI server.
 
 4. Open context menu and Export.
 ```
