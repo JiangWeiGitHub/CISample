@@ -15,7 +15,7 @@
 + [*appveyor*](https://ci.appveyor.com/projects)注册帐号
 + 将github项目加入appveyor
 + 从`https://github.com/settings/tokens`获取token
-+ 使用appveyor官网工具加密上一步的token, [*Website*](https://ci.appveyor.com/tools/encrypt)
++ 使用appveyor官网工具([*Link*](https://ci.appveyor.com/tools/encrypt))加密上一步的token
 + 在项目根目录下编写配置文件,将`auth_token`键名后加上上步的加密后字符串
 
 ```
@@ -67,7 +67,7 @@ git push origin master --tag
 
   备注: 此时的配置文件只是包含部分内容, 需要后续步骤补充修改
   
-  重要: 配置文件中的`osx_image`字段现阶段指定`xcode8`, 不要使用更高版本，否则`code signing`报错
+  重要: 配置文件中的`osx_image`字段现阶段指定`xcode8`, 不要使用更高版本，否则travis在build时, `code signing`环节会报错
 ```
 ### 配置文件内容 ###
 sudo: true
@@ -163,4 +163,4 @@ git commit ...
 git tag -a v0.0.1
 git push origin master --tag
 ```
-+ travis页面随即提示有新的build,等待操作完成后,访问`github releases`页面即可发现最新生成包
++ travis页面随即提示有新的build, 等待操作完成后, 访问`github releases`页面即可发现最新生成包
