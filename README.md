@@ -62,7 +62,9 @@ git push origin master --tag
 + [*travis*](https://travis-ci.org/)注册帐号
 + 将github项目加入travis
 + 编写`.travis`配置文件
+
   备注: 此时的配置文件只是包含部分内容, 需要后续步骤补充修改
+  
   重要: 配置文件中的`osx_image`字段现阶段指定`xcode8`, 不要使用更高版本，否则code signing报错
 ```
 ### 配置文件内容 ###
@@ -100,6 +102,7 @@ sudo gem install travis -v 1.8.8 --no-rdoc --no-ri
 ```
 + 使用travis工具
   `travis setup releases`
+  
   备注: 该命令包含用户交互界面, 根据项目具体信息填写相关问题, 有一步需要将前面的token填入进去
 
 + 上步骤完成后, `.travis`配置文件被工具自动修改, 增添了`deploy`字段, 在此基础上继续完善该文件
@@ -129,8 +132,7 @@ deploy:
   provider: releases
   prerelease: false
   api_key:
-    secure: 
-dDAbiCuWnsTQRhjMQAPxg2gvcRJ2FD9OUuU4Yyg7SRBMFYv/Wld9W/E1hPdmvgWgJpSJ5Z/KBksSxTZslQejsnmC9cPJ8yiDuBgcLjWp8TXtvS7kAYhPZub3CErORUVhkyn3U6Zk9l9jEqxkNkXwQckIpzX5OGV/69BlD24So0g3nHY22MnGkegXkfO4EWvSmdqouFvEujjG/EuglFqAnu8YgW5p3f5r8YTJavCQE7UpyaTE4cekmi2pbpZ1absjD0FTItfUbliXdR5eR9FQcx3vmtyGpIosye0JjJUxgeAq8At7DYoXg+9o08Nk69mSDZVPlYqNC8AOIGQgTqoutJoo04HA96xJITm/WcSlPGrHkov5L3Xzw4zjuHeJSQpxEAin9ovY647mmO03VgLDLC0c/XAhW2t7Hp0NmZ8NP6Yg7mnlv68/iF+Y/ZYfOJJyesocYCPoEWmJZH9nwDSCOcTBRjLC6E1SGGojhETAjJvZX8D5LhTrCPzG+XV55AbaurDYg4r72CvW7Fij40XgVCSm6yMUMAP38k4ukwrdXnnScNZgXESFDQUsOBDOqbIcGrW4vMIlTKmDCQ7Td5nXLjbDkZaP0ckEQ/cYuAXBBvLlv5y3/11tlcHqRqORV3IkLQLxAckO9kZqEF4h2SPrS7EmuxoFfVc2ZyUBmMsfnkc=
+    secure: dDAbiCuWnsTQRhjMQAPxg2gvcRJ2FD9OUuU4Yyg7SRBMFYv/Wld9W/E1hPdmvgWgJpSJ5Z/KBksSxTZslQejsnmC9cPJ8yiDuBgcLjWp8TXtvS7kAYhPZub3CErORUVhkyn3U6Zk9l9jEqxkNkXwQckIpzX5OGV/69BlD24So0g3nHY22MnGkegXkfO4EWvSmdqouFvEujjG/EuglFqAnu8YgW5p3f5r8YTJavCQE7UpyaTE4cekmi2pbpZ1absjD0FTItfUbliXdR5eR9FQcx3vmtyGpIosye0JjJUxgeAq8At7DYoXg+9o08Nk69mSDZVPlYqNC8AOIGQgTqoutJoo04HA96xJITm/WcSlPGrHkov5L3Xzw4zjuHeJSQpxEAin9ovY647mmO03VgLDLC0c/XAhW2t7Hp0NmZ8NP6Yg7mnlv68/iF+Y/ZYfOJJyesocYCPoEWmJZH9nwDSCOcTBRjLC6E1SGGojhETAjJvZX8D5LhTrCPzG+XV55AbaurDYg4r72CvW7Fij40XgVCSm6yMUMAP38k4ukwrdXnnScNZgXESFDQUsOBDOqbIcGrW4vMIlTKmDCQ7Td5nXLjbDkZaP0ckEQ/cYuAXBBvLlv5y3/11tlcHqRqORV3IkLQLxAckO9kZqEF4h2SPrS7EmuxoFfVc2ZyUBmMsfnkc=
   file: dist/testApp-1.0.0.dmg
   skip_cleanup: true
   on:
@@ -150,8 +152,8 @@ dDAbiCuWnsTQRhjMQAPxg2gvcRJ2FD9OUuU4Yyg7SRBMFYv/Wld9W/E1hPdmvgWgJpSJ5Z/KBksSxTZs
 4. Open context menu and Export.
 ```
   备注: 记住导出时使用的密码
-+ 将生成的*.p12加入github源码池中, 并记录好该文件的https地址, 如[*Address*](https://github.com/JiangWeiGitHub/wisnucAssistant-mac/raw/master/certificate.p12)
-+ 在travis的项目页面上点击`More options`->`Settings`, 在`Environment Variables`下增加两个字段`CSC_LINK`, `CSC_KEY_PASSWORD`, `CSC_LINK`字段的值即为上一步的*.p12文件的https地址, `CSC_KEY_PASSWORD`即为导出p12文件输入的密码
++ 将生成的`p12`加入github源码池中, 并记录好该文件的`https`地址, 如[*Address*](https://github.com/JiangWeiGitHub/wisnucAssistant-mac/raw/master/certificate.p12)
++ 在travis的项目页面上点击`More options`->`Settings`, 在`Environment Variables`下增加两个字段`CSC_LINK`, `CSC_KEY_PASSWORD`, `CSC_LINK`字段的值即为上一步的*.p12文件的https地址, `CSC_KEY_PASSWORD`即为导出`p12`文件输入的密码
 + 在shell环境下执行git相关命令，创建新的tag标签
 ```
 git add ...
