@@ -6,14 +6,16 @@
 ## 介绍:
 操作步骤分为两个平台: windows和mac, 因为一次代码和tag提交会生成一份指定编号的release,而两个平台使用不同的ci服务,当有新tag时,会造成两个ci服务都往github release推送相同release编号的生成包,造成第二次推送失败
 
+## Sample
++ [**Windows**](https://github.com/JiangWeiGitHub/wisnucAssistant-win)
++ [**Mac**](https://github.com/JiangWeiGitHub/wisnucAssistant-mac)
 
 ## 流程
 ### windows平台:
 + [*appveyor*](https://ci.appveyor.com/projects)注册帐号
 + 将github项目加入appveyor
 + 从`https://github.com/settings/tokens`获取token
-+ 使用appveyor官网工具加密上一步的token
-  `https://ci.appveyor.com/tools/encrypt`
++ 使用appveyor官网工具加密上一步的token, [*Website*](https://ci.appveyor.com/tools/encrypt)
 + 在项目根目录下编写配置文件,将`auth_token`键名后加上上步的加密后字符串
 
 ```
@@ -49,14 +51,14 @@ deploy:
     on:
       appveyor_repo_tag: true
 ```
-+ 在shell环境下执行git相关命令，创建新的tag标签
++ 在shell环境下执行git相关命令，创建新的`tag`标签
 ```
 git add ...
 git commit ...
 git tag -a v0.0.1
 git push origin master --tag
 ```
-+ appveyor页面随即提示有新的build,等待操作完成后,访问github release页面即可发现最新生成包
++ appveyor页面随即提示有新的build,等待操作完成后,访问`github release`页面即可发现最新生成包
 
 ### macos平台:
 + [*travis*](https://travis-ci.org/)注册帐号
@@ -65,7 +67,7 @@ git push origin master --tag
 
   备注: 此时的配置文件只是包含部分内容, 需要后续步骤补充修改
   
-  重要: 配置文件中的`osx_image`字段现阶段指定`xcode8`, 不要使用更高版本，否则code signing报错
+  重要: 配置文件中的`osx_image`字段现阶段指定`xcode8`, 不要使用更高版本，否则`code signing`报错
 ```
 ### 配置文件内容 ###
 sudo: true
