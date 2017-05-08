@@ -4,7 +4,7 @@
 通过持续集成的方式, 当`github`上的源码项目发生`push tag`动作时, 自动编译生成可执行程序和安装包, 并传回`github releases`供用户使用
 
 ## 介绍:
-操作步骤分为两个平台: windows(使用`appveyor`)和mac(使用`travis`), 因为一次代码和tag提交会生成一份指定编号的release,而两个平台使用不同的ci服务,当有新tag时,会造成两个ci服务都往`github releases`推送相同release编号的生成包,造成第二次推送失败
+操作步骤分为两个平台: windows(使用`appveyor`)和mac(使用`travis`), 因为一次代码和tag提交会生成一份指定编号的release,而两个平台使用不同的ci服务,当有新tag时,会造成两个ci服务都往`github releases`推送相同release编号的生成包,造成第二次推送失败, 所以建议两个平台项目分开
 
 ## Sample
 + [**Windows**](https://github.com/JiangWeiGitHub/wisnucAssistant-win)
@@ -61,6 +61,8 @@ git tag -a v?.?.?
 git push origin master --tag
 ```
 + appveyor页面随即提示有新的build,等待操作完成后,访问`github releases`页面即可发现最新生成包
+
++ 注意: 如果使用electron-builder工具的auto-update功能, 则建议不要使用appveyor的deploy功能, 而是使用electron-builder的cli工具中的-p (--publish)功能向github推送新生成的文件包 (即`./node_modules/.bin/build --config ./electron-builder.yml -p always --win`), 否则现阶段发现使用appveyor推送到github上的文件包缺少`latest.yml`文件
 
 ### macos平台:
 + [*travis*](https://travis-ci.org/)注册帐号
