@@ -62,7 +62,7 @@ git push origin master --tag
 ```
 + appveyor页面随即提示有新的build,等待操作完成后,访问`github releases`页面即可发现最新生成包
 
-+ 注意: 如果使用electron-builder工具的auto-update功能, 则建议不要使用appveyor的deploy功能, 而是使用electron-builder的cli工具中的-p (--publish)功能向github推送新生成的文件包 (即`./node_modules/.bin/build --config ./electron-builder.yml -p always --win`), 否则现阶段发现使用appveyor推送到github上的文件包缺少`latest.yml`文件
++ **注意**: 如果使用electron-builder工具的auto-update功能, 则建议不要使用appveyor的deploy功能, 而是使用electron-builder的cli工具中的-p (--publish)功能向github推送新生成的文件包 (即`./node_modules/.bin/build --config ./electron-builder.yml -p always --win`), 否则现阶段发现使用appveyor推送到github上的文件包缺少`latest.yml`文件
 
 ### macos平台:
 + [*travis*](https://travis-ci.org/)注册帐号
@@ -71,7 +71,7 @@ git push origin master --tag
 
   备注: 此时的配置文件只是包含部分内容, 需要后续步骤补充修改
   
-  重要: 配置文件中的`osx_image`字段现阶段指定为`xcode8`, 不要使用更高版本，否则travis在build时, `code signing`环节会报错
+  **重要**: 配置文件中的`osx_image`字段现阶段指定为`xcode8`, 不要使用更高版本，否则travis在build时, `code signing`环节会报错
 ```
 ### 配置文件内容 ###
 sudo: true
