@@ -7,8 +7,8 @@
 操作步骤分为两个平台: windows(使用`appveyor`)和mac(使用`travis`), 因为一次代码和tag提交会生成一份指定编号的release,而两个平台使用不同的ci服务,当有新tag时,会造成两个ci服务都往`github releases`推送相同release编号的生成包,造成第二次推送失败, 所以建议两个平台项目分开
 
 ## Sample
-+ [**Windows**](https://github.com/JiangWeiGitHub/wisnucAssistant-win)
-+ [**Mac**](https://github.com/JiangWeiGitHub/wisnucAssistant-mac)
++ [**Windows**](https://github.com/JiangWeiGitHub/fruitmix-desktop-win)
++ [**Mac**](https://github.com/JiangWeiGitHub/fruitmix-desktop-mac)
 
 ## 流程
 ### windows平台:
