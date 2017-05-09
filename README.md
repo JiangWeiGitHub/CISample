@@ -198,3 +198,87 @@ git tag -a v?.?.?
 git push origin master --tag
 ```
 + travis页面随即提示有新的build, 等待操作完成后, 访问`github releases`页面即可发现最新生成包
+
++ **注意**: 如果使用electron-builder工具的auto-update功能, 则建议不要使用travis的deploy功能, 而是使用electron-builder的cli工具中的-p (--publish)功能向github推送新生成的文件包 (即`./node_modules/.bin/build --config ./electron-builder.yml -p always --mac`), 否则现阶段发现使用travis推送到github上的文件包缺少`latest-mac.json`文件, just like
+
+```
+  sudo: true
+  language: node_js
+  node_js: '6'
+  os: osx
+  osx_image: xcode8
+
+  branches:
+    except:
+    - master
+
+  before_install:
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
+
+  install:
+    - npm install
+    - npm uninstall babel
+    - npm install babel-cli
+    - npm install electron-builder --save-dev
+    - npm install electron-log electron-updater --save
+    - ./node_modules/.bin/webpack -p
+    - npm run build
+
+  script:
+    - "./node_modules/.bin/build --config ./electron-builder.yml --mac -p always"
+
+  #deploy:
+  #  provider: releases
+  #  prerelease: false
+  #  api_key:
+  #    secure: dDAbiCuWnsTQRhjMQAPxg2gvcRJ2FD9OUuU4Yyg7SRBMFYv/Wld9W/E1hPdmvgWgJpSJ5Z/KBksSxTZslQejsnmC9cPJ8yiDuBgcLjWp8TXtvS7kAYhPZub3CErORUVhkyn3U6Zk9l9jEqxkNkXwQckIpzX5OGV/69BlD24So0g3nHY22MnGkegXkfO4EWvSmdqouFvEujjG/EuglFqAnu8YgW5p3f5r8YTJavCQE7UpyaTE4cekmi2pbpZ1absjD0FTItfUbliXdR5eR9FQcx3vmtyGpIosye0JjJUxgeAq8At7DYoXg+9o08Nk69mSDZVPlYqNC8AOIGQgTqoutJoo04HA96xJITm/WcSlPGrHkov5L3Xzw4zjuHeJSQpxEAin9ovY647mmO03VgLDLC0c/XAhW2t7Hp0NmZ8NP6Yg7mnlv68/iF+Y/ZYfOJJyesocYCPoEWmJZH9nwDSCOcTBRjLC6E1SGGojhETAjJvZX8D5LhTrCPzG+XV55AbaurDYg4r72CvW7Fij40XgVCSm6yMUMAP38k4ukwrdXnnScNZgXESFDQUsOBDOqbIcGrW4vMIlTKmDCQ7Td5nXLjbDkZaP0ckEQ/cYuAXBBvLlv5y3/11tlcHqRqORV3IkLQLxAckO9kZqEF4h2SPrS7EmuxoFfVc2ZyUBmMsfnkc=
+  #  file_glob: true
+  #  file: dist/*
+  #  skip_cleanup: true
+  #  on:
+  #    repo: JiangWeiGitHub/fruitmix-desktop-mac
+  #    tags: true
+```
+
++ electron-builder向github推送build完成的文件包时, 需要在travis的页面上加入环境变量`GH_TOKEN`
+
++ **警告**: 使用electron-builder.yml时, 一定要加上zip字段, 否则`latest-mac.json`不会生成, 配置如下:
+
+```
+    appId: com.wisnuc.app
+    copyright: wisnuc
+    productName: testApp
+
+    asar: false
+
+    directories:
+      buildResources: /
+      output: dist/
+
+    files:
+      - "**/*"
+
+    dmg:
+      contents:
+        - type: link
+          path: /Applications
+          x: 410
+          y: 150
+        - type: file
+          x: 130
+          y: 150
+
+    mac:
+      target:
+        - dmg
+        - zip
+      category: public.app-category.tools
+
+    win:
+      target: nsis
+
+    linux:
+      target:
+        - deb
+        - AppImage
+```
